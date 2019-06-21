@@ -11,7 +11,8 @@ RUN yum install -y golang make git
 RUN cd $GOPATH/src/github.com/openshift/cluster-monitoring-operator 
 
 RUN go get -v github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
-RUN go get github.com/google/go-jsonnet/cmd/jsonnet
+RUN go get -v github.com/google/go-jsonnet/cmd/jsonnet
+RUN cd jsonnet && jb install
 RUN make pkg/manifests/bindata.go
 RUN make operator-no-deps
 RUN cp $GOPATH/src/github.com/openshift/cluster-monitoring-operator/operator /usr/bin/
