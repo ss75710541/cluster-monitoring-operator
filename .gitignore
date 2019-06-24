@@ -17,3 +17,5 @@ operator
 
 jsonnet/vendor/
 tmp/
+
+.idea
