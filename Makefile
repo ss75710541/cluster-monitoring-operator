@@ -1,7 +1,7 @@
 SHELL=/usr/bin/env bash -o pipefail
 
 GO_PKG=github.com/openshift/cluster-monitoring-operator
-REPO?=quay.io/openshift/cluster-monitoring-operator
+REPO?=quay.io/ss75710541/cluster-monitoring-operator
 TAG?=$(shell git rev-parse --short HEAD)
 VERSION=$(shell cat VERSION | tr -d " \t\n\r")
 GO111MODULE?=on
