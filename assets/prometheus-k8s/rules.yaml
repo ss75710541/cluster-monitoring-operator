@@ -569,41 +569,59 @@ spec:
     - expr: count by (rnodeid) (rnode_link_fnode_usedm_rate{} >= 0.85)
       labels:
         quantile: "0.85"
-      record: rnodeid:rnode_link_fnode_usedm_rate:percentile_count
-    - expr: count by (rnodeid) (rnode_link_fnode_usedm_rate{} >= 0.7)
+      record: rnodeid:rnode_link_fnode_usedm_rate:percentile_greater_equal_count
+    - expr: count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.85)
       labels:
-        quantile: "0.7"
-      record: rnodeid:rnode_link_fnode_usedm_rate:percentile_count
-    - expr: count by (rnodeid) (rnode_link_fnode_usedm_rate{} >= 0.5)
+        quantile: "0.85"
+      record: rnodeid:rnode_link_fnode_available_rate:percentile_less_count
+    - expr: count (rnode_link_fnode_usedm_rate{} >= 0.70)
       labels:
-        quantile: "0.5"
-      record: rnodeid:rnode_link_fnode_usedm_rate:percentile_count
-    - expr: count by (rnodeid) (rnode_link_fnode_usedm_rate{})
+        quantile: "0.70"
+      record: rnodeid:rnode_link_fnode_usedm_rate:percentile_greater_equal_count
+    - expr: count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.70)
       labels:
-        quantile: "0"
-      record: rnodeid:rnode_link_fnode_usedm_rate:percentile_count
+        quantile: "0.70"
+      record: rnodeid:rnode_link_fnode_available_rate:percentile_less_count
+    - expr: count by (rnodeid) (rnode_link_fnode_usedm_rate{} >= 0.50)
+      labels:
+        quantile: "0.50"
+      record: rnodeid:rnode_link_fnode_usedm_rate:percentile_greater_equal_count
+    - expr: count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.50)
+      labels:
+        quantile: "0.50"
+      record: rnodeid:rnode_link_fnode_available_rate:percentile_less_count
     - expr: count by (rnodeid) (rnode_link_fnode_credit{}>=0.99)
       labels:
         quantile: "0.99"
-      record: rnodeid:rnode_link_fnode_credit:percentile_count
+      record: rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{}<0.99)
+      labels:
+        quantile: "0.99"
+      record: rnodeid:rnode_link_fnode_credit:percentile_less_count
     - expr: count by (rnodeid) (rnode_link_fnode_credit{}>=0.95)
       labels:
         quantile: "0.95"
-      record: rnodeid:rnode_link_fnode_credit:percentile_count
-    - expr: count by (rnodeid) (rnode_link_fnode_credit{}>=0.9)
+      record: rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{}<0.95)
       labels:
-        quantile: "0.9"
-      record: rnodeid:rnode_link_fnode_credit:percentile_count
+        quantile: "0.95"
+      record: rnodeid:rnode_link_fnode_credit:percentile_less_count
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{}>=0.90)
+      labels:
+        quantile: "0.90"
+      record: rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{}<0.90)
+      labels:
+        quantile: "0.90"
+      record: rnodeid:rnode_link_fnode_credit:percentile_less_count
     - expr: count by (rnodeid) (rnode_link_fnode_credit{}>=0.85)
       labels:
         quantile: "0.85"
-      record: rnodeid:rnode_link_fnode_credit:percentile_count
-    - expr: count by (rnodeid) (rnode_link_fnode_credit{})
+      record: rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{}<0.85)
       labels:
-        quantile: "0"
-      record: rnodeid:rnode_link_fnode_credit:percentile_count
-    - expr: count by (rnodeid) (rnode_link_fnode_credit{})
-      record: rnodeid:rnode_link_fnode_credit:count
+        quantile: "0.85"
+      record: rnodeid:rnode_link_fnode_credit:percentile_less_count
     - expr: avg by (rnodeid) (rnode_dltest_dlaccuracy{})
       record: rnodeid:rnode_dltest_dlaccuracy:avg
     - expr: avg by (rnodeid) (rnode_dltest_dlspeed{})
