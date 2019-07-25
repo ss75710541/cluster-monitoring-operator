@@ -174,6 +174,30 @@
             record: 'rnodeid:rnode_link_fnode_credit:percentile_less_count'
           },
           {
+            expr: 'sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.99"}) / sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
+            labels:
+              { quantile: "0.99" },
+            record: 'rnodeid:rnode_link_fnode_credit:percentile_rate'
+          },
+          {
+            expr: 'sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.95"}) / sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
+            labels:
+              { quantile: "0.95" },
+            record: 'rnodeid:rnode_link_fnode_credit:percentile_rate'
+          },
+          {
+            expr: 'sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.95"}) / sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
+            labels:
+              { quantile: "0.90" },
+            record: 'rnodeid:rnode_link_fnode_credit:percentile_rate'
+          },
+          {
+            expr: 'sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.95"}) / sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
+            labels:
+              { quantile: "0.85" },
+            record: 'rnodeid:rnode_link_fnode_credit:percentile_rate'
+          },
+          {
             expr: 'avg by (rnodeid) (rnode_dltest_dlaccuracy{})',
             record: 'rnodeid:rnode_dltest_dlaccuracy:avg'
           },
