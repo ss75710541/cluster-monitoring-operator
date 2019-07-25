@@ -75,7 +75,7 @@
           },
           {
             expr: 'count by (rnodeid,status)(rnode_link_fnode_credit{})',
-            record: 'rnodeid_status:rnode_link_fnode_credit:status'
+            record: 'rnodeid_status:rnode_link_fnode_credit:status_count'
           },
           {
             expr: 'count by (rnodeid) (rnode_link_fnode_credit{})',
