@@ -99,7 +99,7 @@
             expr: 'count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.85)', 
             labels:
               { quantile: "0.85" },
-            record: 'rnodeid:rnode_link_fnode_available_rate:percentile_less_count'
+            record: 'rnodeid:rnode_link_fnode_usedm_rate:percentile_less_count'
           },
           {
             expr: 'count (rnode_link_fnode_usedm_rate{} >= 0.70)',      
@@ -111,7 +111,7 @@
             expr: 'count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.70)',      
             labels:
               { quantile: "0.70" },
-            record: 'rnodeid:rnode_link_fnode_available_rate:percentile_less_count'
+            record: 'rnodeid:rnode_link_fnode_usedm_rate:percentile_less_count'
           },
           {
             expr: 'count by (rnodeid) (rnode_link_fnode_usedm_rate{} >= 0.50)',      
@@ -123,7 +123,7 @@
             expr: 'count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.50)',      
             labels:
               { quantile: "0.50" },
-            record: 'rnodeid:rnode_link_fnode_available_rate:percentile_less_count'
+            record: 'rnodeid:rnode_link_fnode_usedm_rate:percentile_less_count'
           },
           {
             expr: 'count by (rnodeid) (rnode_link_fnode_credit{}>=0.99)',
