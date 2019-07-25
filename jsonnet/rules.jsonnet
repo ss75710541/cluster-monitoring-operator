@@ -102,7 +102,7 @@
             record: 'rnodeid:rnode_link_fnode_usedm_rate:percentile_less_count'
           },
           {
-            expr: 'count (rnode_link_fnode_usedm_rate{} >= 0.70)',      
+            expr: 'count by (rnodeid) (rnode_link_fnode_usedm_rate{} >= 0.70)',      
             labels:
               { quantile: "0.70" },
             record: 'rnodeid:rnode_link_fnode_usedm_rate:percentile_greater_equal_count'
