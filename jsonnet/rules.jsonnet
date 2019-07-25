@@ -90,22 +90,22 @@
             record: 'rnodeid:rnode_link_fnode_usedm:sum'
           },
           {
-            expr: 'count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.85)',      
+            expr: 'count by (rnodeid) (rnode_link_fnode_usedm_rate{} >= 0.85)',      
             labels:
               { quantile: "0.85" },
-            record: 'rnodeid:rnode_link_fnode_usedm_rate:percentile'
+            record: 'rnodeid:rnode_link_fnode_usedm_rate:percentile_count'
           },
           {
-            expr: 'count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.7)',      
+            expr: 'count by (rnodeid) (rnode_link_fnode_usedm_rate{} >= 0.7)',      
             labels:
               { quantile: "0.7" },
-            record: 'rnodeid:rnode_link_fnode_usedm_rate:percentile'
+            record: 'rnodeid:rnode_link_fnode_usedm_rate:percentile_count'
           },
           {
-            expr: 'count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.5)',      
+            expr: 'count by (rnodeid) (rnode_link_fnode_usedm_rate{} >= 0.5)',      
             labels:
               { quantile: "0.5" },
-            record: 'rnodeid:rnode_link_fnode_usedm_rate:percentile'
+            record: 'rnodeid:rnode_link_fnode_usedm_rate:percentile_count'
           },
           {
             expr: 'count by (rnodeid) (rnode_link_fnode_credit{}>=0.99)',
@@ -117,19 +117,19 @@
             expr: 'count by (rnodeid) (rnode_link_fnode_credit{}>=0.95)',
             labels:
               { quantile: "0.95" },
-            record: 'rnodeid:rnode_link_fnode_credit:percentile'
+            record: 'rnodeid:rnode_link_fnode_credit:percentile_count'
           },
           {
             expr: 'count by (rnodeid) (rnode_link_fnode_credit{}>=0.9)',
             labels:
               { quantile: "0.9" },
-            record: 'rnodeid:rnode_link_fnode_credit:percentile'
+            record: 'rnodeid:rnode_link_fnode_credit:percentile_count'
           },
           {
             expr: 'count by (rnodeid) (rnode_link_fnode_credit{}>=0.85)',
             labels:
               { quantile: "0.85" },
-            record: 'rnodeid:rnode_link_fnode_credit:percentile'
+            record: 'rnodeid:rnode_link_fnode_credit:percentile_count'
           },
           {
             expr: 'count by (rnodeid) (rnode_link_fnode_credit{})',
@@ -180,3 +180,4 @@
     ],
   },
 }
+
