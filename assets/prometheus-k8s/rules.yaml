@@ -554,6 +554,68 @@ spec:
     rules:
     - expr: sum(openshift_build_total{job="kubernetes-apiservers",phase="Error"})/(sum(openshift_build_total{job="kubernetes-apiservers",phase=~"Failed|Complete|Error"}))
       record: build_error_rate
+  - name: bfs-rnode.rules
+    rules:
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{status!="dying"})
+      record: rnodeid:rnode_link_fnode_credit:no_dying_count
+    - expr: count by (rnodeid,status)(rnode_link_fnode_credit{})
+      record: rnodeid_status:rnode_link_fnode_credit:status
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{})
+      record: rnodeid:rnode_link_fnode_credit:count
+    - expr: sum by (rnodeid) (rnode_link_fnode_qoutam{})
+      record: rnodeid:rnode_link_fnode_qoutam:sum
+    - expr: sum by (rnodeid) (rnode_link_fnode_usedm{})
+      record: rnodeid:rnode_link_fnode_usedm:sum
+    - expr: count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.85)
+      labels:
+        quantile: "0.85"
+      record: rnodeid:rnode_link_fnode_usedm_rate:percentile
+    - expr: count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.7)
+      labels:
+        quantile: "0.7"
+      record: rnodeid:rnode_link_fnode_usedm_rate:percentile
+    - expr: count by (rnodeid) (rnode_link_fnode_usedm_rate{} < 0.5)
+      labels:
+        quantile: "0.5"
+      record: rnodeid:rnode_link_fnode_usedm_rate:percentile
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{}>=0.99)
+      labels:
+        quantile: "0.99"
+      record: rnodeid:rnode_link_fnode_credit:percentile
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{}>=0.95)
+      labels:
+        quantile: "0.95"
+      record: rnodeid:rnode_link_fnode_credit:percentile
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{}>=0.9)
+      labels:
+        quantile: "0.9"
+      record: rnodeid:rnode_link_fnode_credit:percentile
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{}>=0.85)
+      labels:
+        quantile: "0.85"
+      record: rnodeid:rnode_link_fnode_credit:percentile
+    - expr: count by (rnodeid) (rnode_link_fnode_credit{})
+      record: rnodeid:rnode_link_fnode_credit:count
+    - expr: avg by (rnodeid) (rnode_dltest_dlaccuracy{})
+      record: rnodeid:rnode_dltest_dlaccuracy:avg
+    - expr: avg by (rnodeid) (rnode_dltest_dlspeed{})
+      record: rnodeid:rnode_dltest_dlspeed:avg
+    - expr: count by (rnodeid) (rnode_uptest_time{issuccess="true"})
+      record: rnodeid:rnode_uptest_time:success_count
+    - expr: count by (rnodeid) (rnode_uptest_time{})
+      record: rnodeid:rnode_uptest_time:count
+    - expr: avg by (rnodeid) (rnode_uptest_time{})
+      record: rnodeid:rnode_uptest_time:avg
+    - expr: sum by (rnodeid) (rnode_fstat_daliy_download_file_count{})
+      record: rnodeid:rnode_fstat_daliy_download_file_count:sum
+    - expr: sum by (rnodeid) (rnode_fstat_daliy_downloading_file_count{})
+      record: rnodeid:rnode_fstat_daliy_downloading_file_count:sum
+    - expr: sum by (rnodeid) (rnode_ftask_daliy_task_count_in_server_dir{})
+      record: rnodeid:rnode_ftask_daliy_task_count_in_server_dir:sum
+    - expr: sum by (rnodeid) (rnode_ftask_daliy_send_download_task_count{})
+      record: rnodeid:rnode_ftask_daliy_send_download_task_count:sum
+    - expr: sum by (rnodeid) (rnode_link_fnode_block{})
+      record: rnode:rnode_link_fnode_block:sum
   - name: kubernetes-absent
     rules:
     - alert: AlertmanagerDown

@@ -17,3 +17,6 @@ operator
 
 jsonnet/vendor/
 tmp/
+
+# goland editor config
+.idea
