@@ -174,25 +174,25 @@
             record: 'rnodeid:rnode_link_fnode_credit:percentile_less_count'
           },
           {
-            expr: 'sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.99"}) / sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
+            expr: 'max by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.99"}) / max by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
             labels:
               { quantile: "0.99" },
             record: 'rnodeid:rnode_link_fnode_credit:percentile_rate'
           },
           {
-            expr: 'sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.95"}) / sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
+            expr: 'max by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.95"}) / max by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
             labels:
               { quantile: "0.95" },
             record: 'rnodeid:rnode_link_fnode_credit:percentile_rate'
           },
           {
-            expr: 'sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.95"}) / sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
+            expr: 'max by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.95"}) / max by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
             labels:
               { quantile: "0.90" },
             record: 'rnodeid:rnode_link_fnode_credit:percentile_rate'
           },
           {
-            expr: 'sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.95"}) / sum by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
+            expr: 'max by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.95"}) / max by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
             labels:
               { quantile: "0.85" },
             record: 'rnodeid:rnode_link_fnode_credit:percentile_rate'
@@ -271,7 +271,7 @@
             }
           },
           {
-            expr: 'irate(rnodeid:rnode_link_fnode_credit:no_dying_count[1m]) / rnodeid:rnode_link_fnode_credit:no_dying_count > -0.3',
+            expr: '( rnodeid:rnode_link_fnode_credit:no_dying_count - (rnodeid:rnode_link_fnode_credit:no_dying_count offset 1m) ) / rnodeid:rnode_link_fnode_credit:no_dying_count < -0.3',
             alert: 'BfsRnodeFnodeWorkCountSharpDrop',
             'for': '1m',
             annotations: {
