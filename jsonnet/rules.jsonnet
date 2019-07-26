@@ -236,6 +236,50 @@
           {
             expr: 'sum by (rnodeid) (rnode_link_fnode_block{})',
             record: 'rnode:rnode_link_fnode_block:sum'
+          },  
+          {
+            expr: 'rnodeid:rnode_dltest_dlaccuracy:avg < 100',
+            alert: 'BfsRnodeDownloadTestError',
+            'for': '5m',
+            annotations: {
+              message: 'rnode {{ $labels.rnodeid }} download test accuracy {{ $value }}% .',
+            },
+            labels: {
+              severity: 'critical',
+            }
+          },
+          {
+            expr: 'sum by (rnodeid) (rnodeid:rnode_uptest_time:success_count) / sum by (rnodeid) (rnodeid:rnode_uptest_time:count) < 1',
+            alert: 'BfsRnodeUploadTestError',
+            'for': '5m',
+            annotations: {
+              message: 'rnode {{ $labels.rnodeid }} upload test accuracy {{ printf "%0.0f" $value }}% .',
+            },
+            labels: {
+              severity: 'critical',
+            }
+          },
+          {
+            expr: 'rnodeid:rnode_fstat_daliy_download_file_count:sum > 20000',
+            alert: 'BfsRnodeDownloadFileCountError',
+            'for': '5m',
+            annotations: {
+              message: 'rnode {{ $labels.rnodeid }} download_file_count {{ $value }}% .',
+            },
+            labels: {
+              severity: 'critical',
+            }
+          },
+          {
+            expr: 'irate(rnodeid:rnode_link_fnode_credit:no_dying_count[1m]) / rnodeid:rnode_link_fnode_credit:no_dying_count > -0.3',
+            alert: 'BfsRnodeFnodeWorkCountSharpDrop',
+            'for': '1m',
+            annotations: {
+              message: 'rnode {{ $labels.rnodeid }} fnode work count drop rate {{ printf "%0.0f" $value }}% .',
+            },
+            labels: {
+              severity: 'critical',
+            }
           },
         ]
       }

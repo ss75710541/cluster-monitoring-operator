@@ -662,6 +662,39 @@ spec:
       record: rnodeid:rnode_ftask_daliy_send_download_task_count:sum
     - expr: sum by (rnodeid) (rnode_link_fnode_block{})
       record: rnode:rnode_link_fnode_block:sum
+    - alert: BfsRnodeDownloadTestError
+      annotations:
+        message: rnode {{ $labels.rnodeid }} download test accuracy {{ $value }}%
+          .
+      expr: rnodeid:rnode_dltest_dlaccuracy:avg < 100
+      for: 5m
+      labels:
+        severity: critical
+    - alert: BfsRnodeUploadTestError
+      annotations:
+        message: rnode {{ $labels.rnodeid }} upload test accuracy {{ printf "%0.0f"
+          $value }}% .
+      expr: sum by (rnodeid) (rnodeid:rnode_uptest_time:success_count) / sum by (rnodeid)
+        (rnodeid:rnode_uptest_time:count) < 1
+      for: 5m
+      labels:
+        severity: critical
+    - alert: BfsRnodeDownloadFileCountError
+      annotations:
+        message: rnode {{ $labels.rnodeid }} download_file_count {{ $value }}% .
+      expr: rnodeid:rnode_fstat_daliy_download_file_count:sum > 20000
+      for: 5m
+      labels:
+        severity: critical
+    - alert: BfsRnodeFnodeWorkCountSharpDrop
+      annotations:
+        message: rnode {{ $labels.rnodeid }} fnode work count drop rate {{ printf
+          "%0.0f" $value }}% .
+      expr: irate(rnodeid:rnode_link_fnode_credit:no_dying_count[1m]) / rnodeid:rnode_link_fnode_credit:no_dying_count
+        > -0.3
+      for: 1m
+      labels:
+        severity: critical
   - name: kubernetes-absent
     rules:
     - alert: AlertmanagerDown
