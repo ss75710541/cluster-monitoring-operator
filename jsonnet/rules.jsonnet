@@ -235,8 +235,12 @@
           },
           {
             expr: 'sum by (rnodeid) (rnode_link_fnode_block{})',
-            record: 'rnode:rnode_link_fnode_block:sum'
+            record: 'rnodeid:rnode_link_fnode_block:sum'
           },  
+          {
+            expr: 'sum by (rnodeid) (rnode_link_fnode_credit{})/rnodeid:rnode_link_fnode_credit:count',
+            record: 'rnodeid:rnode_link_fnode_credit:rate'
+          },
           {
             expr: 'rnodeid:rnode_dltest_dlaccuracy:avg < 100',
             alert: 'BfsRnodeDownloadTestError',
@@ -282,7 +286,7 @@
             }
           },
           {
-            expr: 'sum by (rnodeid) (rnode_link_fnode_credit{})/rnodeid:rnode_link_fnode_credit:count < 0.5',
+            expr: 'rnodeid:rnode_link_fnode_credit:rate < 0.5',
             alert: 'BfsRnodeFnodeCreditRateError',
             'for': '5m',
             annotations: {

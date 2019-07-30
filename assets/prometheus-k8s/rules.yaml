@@ -661,7 +661,9 @@ spec:
     - expr: sum by (rnodeid) (rnode_ftask_daliy_send_download_task_count{})
       record: rnodeid:rnode_ftask_daliy_send_download_task_count:sum
     - expr: sum by (rnodeid) (rnode_link_fnode_block{})
-      record: rnode:rnode_link_fnode_block:sum
+      record: rnodeid:rnode_link_fnode_block:sum
+    - expr: sum by (rnodeid) (rnode_link_fnode_credit{})/rnodeid:rnode_link_fnode_credit:count
+      record: rnodeid:rnode_link_fnode_credit:rate
     - alert: BfsRnodeDownloadTestError
       annotations:
         message: rnode {{ $labels.rnodeid }} download test accuracy {{ $value }}%
@@ -698,8 +700,7 @@ spec:
     - alert: BfsRnodeFnodeCreditRateError
       annotations:
         message: rnode {{ $labels.rnodeid }} credit rate {{ $value }}% .
-      expr: sum by (rnodeid) (rnode_link_fnode_credit{})/rnodeid:rnode_link_fnode_credit:count
-        < 0.5
+      expr: rnodeid:rnode_link_fnode_credit:rate < 0.5
       for: 5m
       labels:
         severity: critical
