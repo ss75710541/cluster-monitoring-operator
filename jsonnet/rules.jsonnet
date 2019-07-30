@@ -186,13 +186,13 @@
             record: 'rnodeid:rnode_link_fnode_credit:percentile_rate'
           },
           {
-            expr: 'max by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.95"}) / max by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
+            expr: 'max by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.90"}) / max by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
             labels:
               { quantile: "0.90" },
             record: 'rnodeid:rnode_link_fnode_credit:percentile_rate'
           },
           {
-            expr: 'max by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.95"}) / max by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
+            expr: 'max by (rnodeid)(rnodeid:rnode_link_fnode_credit:percentile_greater_equal_count{quantile="0.85"}) / max by (rnodeid)(rnodeid:rnode_link_fnode_credit:count{})',
             labels:
               { quantile: "0.85" },
             record: 'rnodeid:rnode_link_fnode_credit:percentile_rate'
