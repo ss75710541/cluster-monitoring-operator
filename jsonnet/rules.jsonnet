@@ -281,6 +281,17 @@
               severity: 'critical',
             }
           },
+          {
+            expr: 'sum by (rnodeid) (rnode_link_fnode_credit{})/rnodeid:rnode_link_fnode_credit:count < 0.5',
+            alert: 'BfsRnodeFnodeCreditRateError',
+            'for': '5m',
+            annotations: {
+              message: 'rnode {{ $labels.rnodeid }} credit rate {{ $value }}% .',
+            },
+            labels: {
+              severity: 'critical',
+            }
+          },
         ]
       }
     ],

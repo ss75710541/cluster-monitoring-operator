@@ -695,6 +695,14 @@ spec:
       for: 1m
       labels:
         severity: critical
+    - alert: BfsRnodeFnodeCreditRateError
+      annotations:
+        message: rnode {{ $labels.rnodeid }} credit rate {{ $value }}% .
+      expr: sum by (rnodeid) (rnode_link_fnode_credit{})/rnodeid:rnode_link_fnode_credit:count
+        < 0.5
+      for: 5m
+      labels:
+        severity: critical
   - name: kubernetes-absent
     rules:
     - alert: AlertmanagerDown
