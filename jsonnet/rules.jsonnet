@@ -178,6 +178,10 @@
             record: 'rnodeid:rnode_link_fnode_block:sum'
           },  
           {
+            expr: 'sum by (rnodeid) (rnode_fafid_daily_total_afid_count{})',
+            record: 'rnodeid:rnode_fafid_daily_total_afid_count:sum'
+          },  
+          {
             expr: 'sum by (rnodeid) (rnode_link_fnode_credit{})/rnodeid:rnode_link_fnode_credit:count',
             record: 'rnodeid:rnode_link_fnode_credit:rate'
           },
