@@ -18,8 +18,8 @@ import (
 	"encoding/json"
 
 	"github.com/golang/glog"
-	"github.com/openshift/cluster-monitoring-operator/pkg/client"
-	"github.com/openshift/cluster-monitoring-operator/pkg/manifests"
+	"github.com/ss75710541/cluster-monitoring-operator/pkg/client"
+	"github.com/ss75710541/cluster-monitoring-operator/pkg/manifests"
 	"github.com/pkg/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

@@ -17,8 +17,8 @@ package tasks
 import (
 	"reflect"
 
-	"github.com/openshift/cluster-monitoring-operator/pkg/client"
-	"github.com/openshift/cluster-monitoring-operator/pkg/manifests"
+	"github.com/ss75710541/cluster-monitoring-operator/pkg/client"
+	"github.com/ss75710541/cluster-monitoring-operator/pkg/manifests"
 	"github.com/pkg/errors"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

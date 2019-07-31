@@ -2,7 +2,7 @@ all: build
 
 APP_NAME=cluster-monitoring-operator
 BIN=operator
-MAIN_PKG=github.com/openshift/$(APP_NAME)/cmd/operator
+MAIN_PKG=github.com/ss75710541/$(APP_NAME)/cmd/operator
 REPO?=quay.io/ss75710541/$(APP_NAME)
 TAG?=$(shell git rev-parse --short HEAD)
 ENVVAR=GOOS=linux GOARCH=amd64 CGO_ENABLED=0
@@ -21,7 +21,7 @@ JB_BIN=$(GOPATH)/bin/jb
 ASSETS=$(shell grep -oh 'assets/.*\.yaml' pkg/manifests/manifests.go)
 JSONNET_SRC=$(shell find ./jsonnet -type f)
 JSONNET_VENDOR=jsonnet/jsonnetfile.lock.json jsonnet/vendor
-GO_BUILD_RECIPE=GOOS=$(GOOS) go build --ldflags="-s -X github.com/openshift/cluster-monitoring-operator/pkg/operator.Version=$(VERSION)" -o $(BIN) $(MAIN_PKG)
+GO_BUILD_RECIPE=GOOS=$(GOOS) go build --ldflags="-s -X github.com/ss75710541/cluster-monitoring-operator/pkg/operator.Version=$(VERSION)" -o $(BIN) $(MAIN_PKG)
 
 build: $(BIN)
 
@@ -67,8 +67,8 @@ generate: clean
 	docker run \
 		--rm \
 		--security-opt label=disable \
-		-v `pwd`:/go/src/github.com/openshift/cluster-monitoring-operator \
-		-w /go/src/github.com/openshift/cluster-monitoring-operator \
+		-v `pwd`:/go/src/github.com/ss75710541/cluster-monitoring-operator \
+		-w /go/src/github.com/ss75710541/cluster-monitoring-operator \
 		tpo-generate \
 		make dependencies pkg/manifests/bindata.go merge-cluster-roles docs
 
