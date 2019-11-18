@@ -150,23 +150,23 @@
             record: 'rnodeid:rnode_uptest_afs_time:success_count'
           },
           {
-            expr: 'count by (rnodeid) (rnode_uptest_time{uptype="upload",uptype="upload",upfield="afs"})',
+            expr: 'count by (rnodeid) (rnode_uptest_time{uptype="upload",upfield="afs"})',
             record: 'rnodeid:rnode_uptest_afs_time:count'
           },
           {
-            expr: 'avg by (rnodeid) (rnode_uptest_time{uptype="upload",uptype="upload",upfield="afs"})',
+            expr: 'avg by (rnodeid) (rnode_uptest_time{uptype="upload",upfield="afs"})',
             record: 'rnodeid:rnode_uptest_afs_time:avg'
           },
           {
-            expr: 'count by (rnodeid) (rnode_uptest_time{issuccess="true",uptype="upload",uptype="upload",upfield="arfs"})',
+            expr: 'count by (rnodeid) (rnode_uptest_time{issuccess="true",uptype="upload",upfield="arfs"})',
             record: 'rnodeid:rnode_uptest_arfs_time:success_count'
           },
           {
-            expr: 'count by (rnodeid) (rnode_uptest_time{uptype="upload",uptype="upload",upfield="arfs"})',
+            expr: 'count by (rnodeid) (rnode_uptest_time{uptype="upload",upfield="arfs"})',
             record: 'rnodeid:rnode_uptest_arfs_time:count'
           },
           {
-            expr: 'avg by (rnodeid) (rnode_uptest_time{uptype="upload",uptype="upload",upfield="arfs"})',
+            expr: 'avg by (rnodeid) (rnode_uptest_time{uptype="upload",upfield="arfs"})',
             record: 'rnodeid:rnode_uptest_arfs_time:avg'
           },
           {
