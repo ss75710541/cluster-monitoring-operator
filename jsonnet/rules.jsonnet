@@ -170,12 +170,20 @@
             record: 'rnodeid:rnode_uptest_arfs_time:avg'
           },
           {
-            expr: 'count by (rnodeid) (rnode_uptest_time{issuccess="true",uptype="upload",upfield="agfs"})',
+            expr: 'count by (rnodeid) (rnode_uptest_time{issuccess="true",uptype="alias",upfield="agfs"})',
             record: 'rnodeid:rnode_uptest_agfs_alias:success_count'
           },
           {
-            expr: 'count by (rnodeid) (rnode_uptest_time{uptype="upload", upfield="agfs"})',
+            expr: 'count by (rnodeid) (rnode_uptest_time{uptype="alias", upfield="agfs"})',
             record: 'rnodeid:rnode_uptest_agfs_alias:count'
+          },
+          {
+            expr: 'count by (rnodeid,upfield) (rnode_uptest_time{issuccess="true",uptype="set_p"})',
+            record: 'rnodeid:rnode_uptest_set_p:success_count'
+          },
+          {
+            expr: 'count by (rnodeid,upfield) (rnode_uptest_time{uptype="set_p"})',
+            record: 'rnodeid:rnode_uptest_set_p:count'
           },
           {
             expr: 'sum by (rnodeid) (rnode_fstat_daliy_download_file_count{})',
