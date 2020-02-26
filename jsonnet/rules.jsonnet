@@ -194,6 +194,26 @@
             record: 'rnodeid:rnode_fstat_daliy_downloading_file_count:sum'
           },
           {
+            expr: 'sum by (rnodeid) (rnode_fstat_daliy_m_x_file_count{})',
+            record: 'rnodeid:rnode_fstat_daliy_m_x_file_count:sum'
+          },
+          {
+            expr: 'sum by (rnodeid) (rnode_fnode_daily_block_count{})',
+            record: 'rnodeid:rnode_fnode_daily_block_count:sum'
+          },
+          {
+            expr: 'sum by (rnodeid) (rnode_fnode_daily_yesterday_block_count{})',
+            record: 'rnodeid:rnode_fnode_daily_yesterday_block_count:sum'
+          },
+          {
+            expr: 'sum by (rnodeid) (rnode_fnode_daily_file_length{})',
+            record: 'rnodeid:rnode_fnode_daily_file_length:sum'
+          },
+          {
+            expr: 'sum by (rnodeid) (rnode_fnode_daily_fnode_block_count{})',
+            record: 'rnodeid:rnode_fnode_daily_fnode_block_count:sum'
+          },
+          {
             expr: 'sum by (rnodeid) (rnode_ftask_daliy_task_count_in_server_dir{})',
             record: 'rnodeid:rnode_ftask_daliy_task_count_in_server_dir:sum'
           },
@@ -262,7 +282,7 @@
             alert: 'BfsRnodeDownloadFileCountError',
             'for': '5m',
             annotations: {
-              message: 'rnode {{ $labels.rnodeid }} download_file_count {{ $value }}% .',
+              message: 'rnode {{ $labels.rnodeid }} download_file_count {{ $value }} .',
             },
             labels: {
               severity: 'critical',
