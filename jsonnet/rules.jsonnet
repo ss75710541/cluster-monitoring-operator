@@ -226,36 +226,36 @@
             record: 'rnodeid:rnode_link_fnode_block:sum'
           },
           {
-            expr: 'sum by (rnodeid) (rnode_fafid_daily_total_afid_count{})',
-            record: 'rnodeid:rnode_fafid_daily_total_afid_count:sum'
+            expr: 'max by (rnodeid) (rnode_fafid_daily_total_afid_count{})',
+            record: 'rnodeid:rnode_fafid_daily_total_afid_count:max'
           },
           {
-            expr: 'sum by (rnodeid) (rnode_agfs_fagfid_daily_total_count{})',
-            record: 'rnodeid:rnode_agfs_fagfid_daily_total_count:sum'
+            expr: 'max by (rnodeid) (rnode_agfs_fagfid_daily_total_count{})',
+            record: 'rnodeid:rnode_agfs_fagfid_daily_total_count:max'
           },
           {
-            expr: 'sum by (rnodeid) (rnode_arfs_fafid_daily_i_count{})',
-            record: 'rnodeid:rnode_arfs_fafid_daily_i_count:sum'
+            expr: 'max by (rnodeid) (rnode_arfs_fafid_daily_i_count{})',
+            record: 'rnodeid:rnode_arfs_fafid_daily_i_count:max'
           },
           {
-            expr: 'sum by (rnodeid) (rnode_fstat_daliy_aos_size{})',
-            record: 'rnodeid:rnode_fstat_daliy_aos_sizem:sum'
+            expr: 'max by (rnodeid) (rnode_fstat_daliy_aos_size{})',
+            record: 'rnodeid:rnode_fstat_daliy_aos_sizem:max'
           },
           {
-            expr: 'sum by (rnodeid) (rnode_fstat_daliy_afs_1e_size{})',
-            record: 'rnodeid:rnode_fstat_daliy_afs_1e_sizem:sum'
+            expr: 'max by (rnodeid) (rnode_fstat_daliy_afs_1e_size{})',
+            record: 'rnodeid:rnode_fstat_daliy_afs_1e_sizem:max'
           },
           {
-            expr: 'sum by (rnodeid) (rnode_fstat_daliy_arfs_1e_size{})',
-            record: 'rnodeid:rnode_fstat_daliy_arfs_1e_sizem:sum'
+            expr: 'max by (rnodeid) (rnode_fstat_daliy_arfs_1e_size{})',
+            record: 'rnodeid:rnode_fstat_daliy_arfs_1e_sizem:max'
           },
           {
-            expr: 'sum by (rnodeid) (rnode_fstat_daliy_agfs_1e_size{})',
-            record: 'rnodeid:rnode_fstat_daliy_agfs_1e_sizem:sum'
+            expr: 'max by (rnodeid) (rnode_fstat_daliy_agfs_1e_size{})',
+            record: 'rnodeid:rnode_fstat_daliy_agfs_1e_sizem:max'
           },
           {
-            expr: 'sum by (rnodeid) (rnode_fstat_daliy_idx_size{})',
-            record: 'rnodeid:rnode_fstat_daliy_idx_sizem:sum'
+            expr: 'max by (rnodeid) (rnode_fstat_daliy_idx_size{})',
+            record: 'rnodeid:rnode_fstat_daliy_idx_sizem:max'
           },
           {
             expr: 'sum by (rnodeid) (rnode_link_fnode_credit{})/rnodeid:rnode_link_fnode_credit:count',
