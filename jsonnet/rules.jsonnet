@@ -250,6 +250,10 @@
             record: 'rnodeid:rnode_fstat_daliy_arfs_1e_sizem:sum'
           },
           {
+            expr: 'sum by (rnodeid) (rnode_fstat_daliy_agfs_1e_size{})',
+            record: 'rnodeid:rnode_fstat_daliy_agfs_1e_sizem:sum'
+          },
+          {
             expr: 'sum by (rnodeid) (rnode_fstat_daliy_idx_size{})',
             record: 'rnodeid:rnode_fstat_daliy_idx_sizem:sum'
           },
