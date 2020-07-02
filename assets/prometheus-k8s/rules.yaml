@@ -658,6 +658,12 @@ spec:
       record: rnodeid:rnode_fstat_daliy_agfs_1e_sizem:max
     - expr: max by (rnodeid) (rnode_fstat_daliy_idx_size{})
       record: rnodeid:rnode_fstat_daliy_idx_sizem:max
+    - expr: max by (rnodeid) (rnode_fstat_daliy_rn_api_size{})
+      record: rnodeid:rnode_fstat_daliy_rn_api_sizem:max
+    - expr: max by (rnodeid) (rnode_fstat_daliy_tn_api_size{})
+      record: rnodeid:rnode_fstat_daliy_tn_api_sizem:max
+    - expr: max by (rnodeid) (rnode_fstat_daliy_pn_api_size{})
+      record: rnodeid:rnode_fstat_daliy_pn_api_sizem:max
     - expr: sum by (rnodeid) (rnode_link_fnode_credit{})/rnodeid:rnode_link_fnode_credit:count
       record: rnodeid:rnode_link_fnode_credit:rate
     - alert: BfsRnodeDownloadTestError
