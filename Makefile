@@ -2,7 +2,7 @@ all: build
 
 APP_NAME=cluster-monitoring-operator
 BIN=operator
-MAIN_PKG=github.com/openshift/$(APP_NAME)/cmd/operator
+MAIN_PKG=github.com/ss75710541/$(APP_NAME)/cmd/operator
 REPO?=quay.io/ss75710541/$(APP_NAME)
 TAG?=$(shell git rev-parse --short HEAD)
 ENVVAR=GOOS=linux GOARCH=amd64 CGO_ENABLED=0
