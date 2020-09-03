@@ -56,6 +56,7 @@ local kp = (import 'kube-prometheus/kube-prometheus.libsonnet') +
              },
            } +
            (import 'rules.jsonnet') +
+           (import 'bfs.jsonnet') +
            (import 'prometheus-operator.jsonnet') +
            (import 'node-exporter.jsonnet') +
            (import 'kube-state-metrics.jsonnet') +
