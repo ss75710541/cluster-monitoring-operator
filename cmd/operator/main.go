@@ -29,7 +29,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"golang.org/x/sync/errgroup"
 
-	cmo "github.com/openshift/cluster-monitoring-operator/pkg/operator"
+	cmo "github.com/ss75710541/cluster-monitoring-operator/pkg/operator"
 )
 
 type tags map[string]string

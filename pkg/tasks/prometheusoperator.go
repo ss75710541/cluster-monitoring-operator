@@ -15,8 +15,8 @@
 package tasks
 
 import (
-	"github.com/openshift/cluster-monitoring-operator/pkg/client"
-	"github.com/openshift/cluster-monitoring-operator/pkg/manifests"
+	"github.com/ss75710541/cluster-monitoring-operator/pkg/client"
+	"github.com/ss75710541/cluster-monitoring-operator/pkg/manifests"
 	"github.com/pkg/errors"
 )
 

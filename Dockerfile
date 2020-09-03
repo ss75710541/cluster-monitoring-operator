@@ -4,11 +4,11 @@ ENV GOPATH /go
 ENV PATH="${PATH}:${GOPATH}/bin"
 RUN mkdir $GOPATH
 
-COPY . $GOPATH/src/github.com/openshift/cluster-monitoring-operator
+COPY . $GOPATH/src/github.com/ss75710541/cluster-monitoring-operator
 
 RUN yum install -y golang make git && \
-    cd $GOPATH/src/github.com/openshift/cluster-monitoring-operator && \
-    make operator-no-deps && cp $GOPATH/src/github.com/openshift/cluster-monitoring-operator/operator /usr/bin/ && \
+    cd $GOPATH/src/github.com/ss75710541/cluster-monitoring-operator && \
+    make operator-no-deps && cp $GOPATH/src/github.com/ss75710541/cluster-monitoring-operator/operator /usr/bin/ && \
     yum autoremove -y golang make git && yum clean all
 
 LABEL io.k8s.display-name="OpenShift cluster-monitoring-operator" \

@@ -16,7 +16,7 @@ package tasks
 
 import (
 	"github.com/golang/glog"
-	"github.com/openshift/cluster-monitoring-operator/pkg/client"
+	"github.com/ss75710541/cluster-monitoring-operator/pkg/client"
 	"github.com/pkg/errors"
 )
 

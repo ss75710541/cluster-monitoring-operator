@@ -26,9 +26,9 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/util/workqueue"
 
-	"github.com/openshift/cluster-monitoring-operator/pkg/client"
-	"github.com/openshift/cluster-monitoring-operator/pkg/manifests"
-	"github.com/openshift/cluster-monitoring-operator/pkg/tasks"
+	"github.com/ss75710541/cluster-monitoring-operator/pkg/client"
+	"github.com/ss75710541/cluster-monitoring-operator/pkg/manifests"
+	"github.com/ss75710541/cluster-monitoring-operator/pkg/tasks"
 )
 
 var (

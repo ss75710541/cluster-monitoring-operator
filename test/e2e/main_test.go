@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/openshift/cluster-monitoring-operator/test/e2e/framework"
+	"github.com/ss75710541/cluster-monitoring-operator/test/e2e/framework"
 	"github.com/pkg/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"

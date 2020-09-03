@@ -9,7 +9,7 @@ set -u
 set -x
 
 CLUSTER="tpo-$(git rev-parse --short HEAD)-${BUILD_ID}"
-CMO_REPO="/go/src/github.com/openshift/cluster-monitoring-operator"
+CMO_REPO="/go/src/github.com/ss75710541/cluster-monitoring-operator"
 KUBECONFIG="${TPO_REPO}/build/${CLUSTER}/generated/auth/kubeconfig"
 
 

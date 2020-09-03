@@ -45,7 +45,7 @@ pipeline {
             steps {
                 sh('''
                     mkdir -p /go/src/github.com/coreos-inc
-                    ln -s $PWD /go/src/github.com/openshift/cluster-monitoring-operator
+                    ln -s $PWD /go/src/github.com/ss75710541/cluster-monitoring-operator
                     make crossbuild
                 ''')
                 withCredentials([
@@ -82,7 +82,7 @@ pipeline {
             steps {
                 sh('''
                     mkdir -p /go/src/github.com/coreos-inc
-                    ln -s $PWD /go/src/github.com/openshift/cluster-monitoring-operator
+                    ln -s $PWD /go/src/github.com/ss75710541/cluster-monitoring-operator
                 ''')
                 withCredentials([
                         usernamePassword(

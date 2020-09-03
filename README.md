@@ -31,7 +31,7 @@ The Cluster Monitoring Operator has many builtin `ServiceMonitor` resources whic
 
 To register a new builtin component, make the following changes:
 
-* Add a new `ServiceMonitor` manifest file to [jsonnet/prometheus.jsonnet](jsonnet/prometheus.jsonnet). An example of this can be seen for the OpenShift component "kube-controllers", [here](https://github.com/openshift/cluster-monitoring-operator/blob/01bfe3789117e7074e893251f2f6d31c816db8fb/jsonnet/prometheus.jsonnet#L113-L145).
+* Add a new `ServiceMonitor` manifest file to [jsonnet/prometheus.jsonnet](jsonnet/prometheus.jsonnet). An example of this can be seen for the OpenShift component "kube-controllers", [here](https://github.com/ss75710541/cluster-monitoring-operator/blob/01bfe3789117e7074e893251f2f6d31c816db8fb/jsonnet/prometheus.jsonnet#L113-L145).
 * Re-generate the go-bindata code, using the `pkg/manifests/bindata.go` make target. This will also create a new file in `assets/prometheus-k8s/` according to the name given in the jsonnet code.
 * Add a constant in [pkg/manifests/manifests.go](pkg/manifests/manifests.go) which points to the new manifest file, from `assets/`.
 * Add a new `Factory` method in [pkg/manifests/manifests.go](pkg/manifests/manifests.go) which loads the manifest using the new constant.
