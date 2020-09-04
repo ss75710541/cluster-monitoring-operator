@@ -12,7 +12,7 @@ data:
     prometheusK8s:
       baseImage: openshift/prometheus
     alertmanagerMain:
-      baseImage: openshift/prometheus-alertmanager
+      baseImage: quay.io/prometheus/alertmanager
     nodeExporter:
       baseImage: openshift/prometheus-node-exporter
     kubeRbacProxy:

@@ -8,7 +8,7 @@
           "subdir": "contrib/kube-prometheus/jsonnet/kube-prometheus"
         }
       },
-      "version": "9c0d2e34fa0a8bc22049e50bae46f4bb87ec2045",
+      "version": "7a25bf6b6bb2347dacb235659b73bc210117acc7",
       "sum": "61kWpqFaGUf8yRhioHzNPVwoFyCeVnVnK7OWM50ZreE="
     },
     {
@@ -74,7 +74,7 @@
           "subdir": "contrib/kube-prometheus/jsonnet/kube-prometheus"
         }
       },
-      "version": "9c0d2e34fa0a8bc22049e50bae46f4bb87ec2045",
+      "version": "7a25bf6b6bb2347dacb235659b73bc210117acc7",
       "sum": "q/O0Y8r4vaj58GNyrYZyMnMzzrjLsFGFWqB//9jajuo="
     },
     {
@@ -96,7 +96,7 @@
           "subdir": "jsonnet/prometheus-operator"
         }
       },
-      "version": "27b1eb72d9d93e5ab447121e2b884bc558bde01d",
+      "version": "7a25bf6b6bb2347dacb235659b73bc210117acc7",
       "sum": "3reT0O1Dc6efYEcQyqg8eqq43i8WoR2jIhMGmX6LK9o="
     }
   ]
