@@ -4,11 +4,11 @@
       "name": "anti-affinity",
       "source": {
         "git": {
-          "remote": "https://github.com/coreos/prometheus-operator",
+          "remote": "https://github.com/prometheus-operator/prometheus-operator",
           "subdir": "contrib/kube-prometheus/jsonnet/kube-prometheus"
         }
       },
-      "version": "2fa293b8f98d890f778e191e2fdc30a616408064"
+      "version": "v0.28.0"
     },
     {
       "name": "kube-prometheus",

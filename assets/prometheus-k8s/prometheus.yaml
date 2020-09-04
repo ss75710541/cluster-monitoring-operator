@@ -87,4 +87,4 @@ spec:
     matchExpressions:
     - key: k8s-app
       operator: Exists
-  version: v2.3.2
+  version: v2.5.0

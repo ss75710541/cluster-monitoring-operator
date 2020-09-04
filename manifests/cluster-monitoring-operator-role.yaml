@@ -53,6 +53,9 @@ rules:
 - apiGroups: [batch]
   resources: [cronjobs, jobs]
   verbs: [list, watch]
+- apiGroups: [policy]
+  resources: [poddisruptionbudgets]
+  verbs: [list, watch]
 - apiGroups: ['']
   resources: [configmaps, endpoints, limitranges, namespaces, nodes, persistentvolumeclaims,
     persistentvolumes, pods, replicationcontrollers, resourcequotas, secrets, services]
