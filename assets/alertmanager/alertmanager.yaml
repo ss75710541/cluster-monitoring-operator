@@ -20,7 +20,7 @@ spec:
           - openshift-monitoring
           topologyKey: kubernetes.io/hostname
         weight: 100
-  baseImage: openshift/prometheus-alertmanager
+  baseImage: prometheus/alertmanager
   containers:
   - args:
     - -provider=openshift
