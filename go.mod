@@ -1,0 +1,63 @@
+module github.com/ss75710541/cluster-monitoring-operator
+
+go 1.12
+
+require (
+	github.com/Jeffail/gabs v0.0.0-20180420203615-7a0fed31069a
+	github.com/PuerkitoBio/purell v0.0.0-20161115024942-0bcb03f4b4d0
+	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578
+	github.com/ant31/crd-validation v0.0.0-20180702145049-30f8a35d0ac2
+	github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973
+	github.com/blang/semver v0.0.0-20170727064818-2ee87856327b
+	github.com/coreos/prometheus-operator v0.0.0-20180806150402-82ac49106139
+	github.com/davecgh/go-spew v0.0.0-20161029205726-346938d642f2
+	github.com/emicklei/go-restful v0.0.0-20180701195719-3eb9738c1697
+	github.com/ghodss/yaml v0.0.0-20170327235444-0ca9ea5df545
+	github.com/go-kit/kit v0.0.0-20180319174501-ca4112baa34c
+	github.com/go-logfmt/logfmt v0.0.0-20161115142513-390ab7935ee2
+	github.com/go-openapi/jsonpointer v0.0.0-20180322222829-3a0015ad55fa
+	github.com/go-openapi/jsonreference v0.0.0-20180322222742-3fb327e6747d
+	github.com/go-openapi/spec v0.0.0-20180709191619-90cb6221326a
+	github.com/go-openapi/swag v0.0.0-20180703152219-2b0bd4f193d0
+	github.com/go-stack/stack v0.0.0-20171112031402-259ab82a6cad
+	github.com/gogo/protobuf v0.0.0-20180202161900-1adfc126b415
+	github.com/golang/glog v0.0.0-20141105023935-44145f04b68c
+	github.com/golang/protobuf v0.0.0-20180430185241-b4deda0973fb
+	github.com/google/btree v0.0.0-20180124185431-e89373fe6b4a
+	github.com/google/gofuzz v0.0.0-20170612174753-24818f796faf
+	github.com/googleapis/gnostic v0.0.0-20180519185700-7c663266750e
+	github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7
+	github.com/hashicorp/go-version v0.0.0-20180322230233-23480c066577
+	github.com/hashicorp/golang-lru v0.0.0-20180201235237-0fb14efe8c47
+	github.com/imdario/mergo v0.0.0-20180608140156-9316a62528ac
+	github.com/json-iterator/go v0.0.0-20180701071628-ab8a2e0c74be
+	github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515
+	github.com/mailru/easyjson v0.0.0-20180606163543-3fdea8d05856
+	github.com/matttproud/golang_protobuf_extensions v0.0.0-20160424113007-c12348ce28de
+	github.com/mitchellh/hashstructure v0.0.0-20170609045927-2bca23e0e452
+	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+	github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742
+	github.com/openshift/api v0.0.0-20180119195949-0d921e363e95
+	github.com/openshift/client-go v0.0.0-20180227193119-1fa528d3be06
+	github.com/petar/GoLLRB v0.0.0-20130427215148-53be0d36a84c
+	github.com/peterbourgon/diskv v0.0.0-20170814173558-5f041e8faa00
+	github.com/pkg/errors v0.0.0-20160929014801-645ef00459ed
+	github.com/prometheus/client_golang v0.0.0-20160817154824-c5b7fccd2042
+	github.com/prometheus/client_model v0.0.0-20171117100541-99fa1f4be8e5
+	github.com/prometheus/common v0.0.0-20180518154759-7600349dcfe1
+	github.com/prometheus/procfs v0.0.0-20180705121852-ae68e2d4c00f
+	github.com/spf13/pflag v0.0.0-20180412120913-583c0c0531f0
+	golang.org/x/crypto v0.0.0-20180621125126-a49355c7e3f8
+	golang.org/x/net v0.0.0-20180710023853-292b43bbf7cb
+	golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f
+	golang.org/x/sys v0.0.0-20180709060233-1b2967e3c290
+	golang.org/x/text v0.0.0-20171214130843-f21a4dfb5e38
+	golang.org/x/time v0.0.0-20180412165947-fbb02b2291d2
+	gopkg.in/inf.v0 v0.0.0-20180326172332-d2d2541c53f1
+	gopkg.in/yaml.v2 v2.0.0-20180328195020-5420a8b6744d
+	k8s.io/api v0.0.0-20180628040859-072894a440bd
+	k8s.io/apiextensions-apiserver v0.0.0-20180628053655-3de98c57bc05
+	k8s.io/apimachinery v0.0.0-20180621070125-103fd098999d
+	k8s.io/client-go v0.0.0-20180628043050-7d04d0e2a0a1
+	k8s.io/kube-openapi v0.0.0-20180629012420-d83b052f768a
+)
