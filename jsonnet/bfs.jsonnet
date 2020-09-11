@@ -129,6 +129,10 @@
             record: 'rnodeid:rnode_fstat_daliy_downloading_file_count:sum'
           },
           {
+            expr: 'max by (rnodeid) (rnode_fstat_daliy_i_file_count{})',
+            record: 'rnodeid:rnode_fstat_daliy_i_file_count:max'
+          },
+          {
             expr: 'sum by (rnodeid) (rnode_fstat_daliy_m_x_file_count{})',
             record: 'rnodeid:rnode_fstat_daliy_m_x_file_count:sum'
           },
